@@ -1,1 +1,14 @@
-
+# This sets up GitHub Pages to serve from the main branch root
+name: Enable GitHub Pages
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: ./
